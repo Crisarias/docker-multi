@@ -9,10 +9,10 @@ script:
   - docker run quimerait/react-test npm test -- --coverage
 
 after_success:
-  - docker build quimerait/docker-multi-client ./client
-  - docker build quimerait/docker-multi-nginx ./nginx  
-  - docker build quimerait/docker-multi-server ./server
-  - docker build quimerait/docker-multi-worker ./worker
+  - docker build -t quimerait/docker-multi-client ./client
+  - docker build -t quimerait/docker-multi-nginx ./nginx  
+  - docker build -t quimerait/docker-multi-server ./server
+  - docker build -t quimerait/docker-multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those image and push them to docker hub
