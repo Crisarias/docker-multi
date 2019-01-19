@@ -1,31 +1,26 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
-import OtherPage from './Fib'
-import Fib from './Fib'
-
-
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import OtherPage from './OtherPage';
+import Fib from './Fib';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <Link to="/">Home</Link>
-          <Link to="/otherpage">Other Page</Link>
-        </header>
-        <div>
-          <Route exact path="/" Component={Fib}/>
-          <Route path="/otherpage" Component={OtherPage}/>
+          <header className="App-header">
+            <h1 className="App-title">Welcome to React</h1>
+            <Link to="/">Home</Link>
+            <br/>
+            <Link to="/otherpage">Other Page</Link>
+          </header>
+          <div>
+            <Route exact path="/" component={Fib} />
+            <Route path="/otherpage" component={OtherPage} />
+          </div>
         </div>
-      </div>
-      </Router>      
+      </Router>
     );
   }
 }
