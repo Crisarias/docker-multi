@@ -10,7 +10,7 @@ script:
 
 after_success:
   - docker build quimerait/docker-multi-client ./client
-  - docker build quimerait/docker-multi-nginx ./nginx
+  - docker build quimerait/docker-multi-nginx ./nginx  
   - docker build quimerait/docker-multi-server ./server
   - docker build quimerait/docker-multi-worker ./worker
   # Log in to the docker CLI
