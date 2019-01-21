@@ -12,12 +12,11 @@ RUN npm install
 
 #Copy files
 COPY . .
+RUN npm run build
 
 
 #Tell the image what to do when it starts
 #as a container
-CMD ["npm", "run", "build"]
-
 FROM nginx
 EXPOSE 3000
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf 
